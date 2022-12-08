@@ -1,17 +1,36 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from database.methods import *
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Kukika haha, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# add_patient("Lüke, Aladár", 33, "f")
+# add_diagnose("Sifilis", "A megfázás nagyon rossz dolog")
+
+patient = session.query(Patients).filter_by(name="Lüke, Aladár").first()
+diagnose = session.query(Diagnoses).filter_by(name="Megfázás").first()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+add_patient_diagnosis(patient.id, diagnose.id)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
-# Ahoy!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+logger.add("ConductAI.log", retention="10 days")
